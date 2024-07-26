@@ -17,13 +17,13 @@ public class SmDemo3 {
             em.getTransaction().begin();
             try {
 
-                /* Find Modules */
+
                 Module m001 = em.find(Module.class,"M001");
                 Module m002 =  em.find(Module.class,"M002");
                 Module m003 =  em.find(Module.class,"M003");
                 Module m004 =  em.find(Module.class,"M004");
 
-                /* Find Students */
+
                 Student tharindu =  em.find(Student.class,"123456789V");
                 Student buddika = em.find(Student.class,"987654321V");
                 Student ravindya = em.find(Student.class,"543216789V");
@@ -31,11 +31,10 @@ public class SmDemo3 {
                 Student kasun = em.find(Student.class,"937863796V");
 
 
-                /* Find Users */
                 User yasiya = em.find(User.class,"yasithperera");
                 User asiri = em.find(User.class,"asiri");
 
-                /* Find Batch */
+
                 Batch dep12 = em.find(Batch.class,"B001");
                 Batch cmjd300 = em.find(Batch.class,"CMJD0300");
                 Batch cmjd301 = em.find(Batch.class,"CMJD0301");
