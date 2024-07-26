@@ -17,27 +17,22 @@ public class SmDemo2 {
             EntityManager em = emf.createEntityManager()){
             em.getTransaction().begin();
             try {
-                /* Find Modules */
+
                 Module m001 = em.find(Module.class,"M001");
                 Module m002 =  em.find(Module.class,"M002");
                 Module m003 =  em.find(Module.class,"M003");
                 Module m004 =  em.find(Module.class,"M004");
 
 
-
-                /* Find Courses */
                 Course dep = em.find(Course.class,"C001");
                 Course cmjd = em.find(Course.class,"C002");
                 Course gdse = em.find(Course.class,"C003");
 
-
-                /* Save Batch */
+                Batch gdse65 = new Batch("GDSE0081", gdse, "2 Years", new BigDecimal("400000"));
+                Batch cmjd103 = new Batch("CMJD0300", cmjd, "12 Months", new BigDecimal("80000"));
+                Batch cmjd102 = new Batch("CMJD0301", cmjd, "12 Months", new BigDecimal("80000"));
                 Batch dep12 = new Batch("B001", dep, "6 Months", new BigDecimal("200000"));
-                Batch cmjd300 = new Batch("CMJD0300", cmjd, "12 Months", new BigDecimal("80000"));
-                Batch cmjd301 = new Batch("CMJD0301", cmjd, "12 Months", new BigDecimal("80000"));
-                Batch gdse81 = new Batch("GDSE0081", gdse, "2 Years", new BigDecimal("400000"));
 
-                /* Save Course-Module */
                 CourseModule cm1 = new CourseModule(dep, m001);
                 CourseModule cm2 = new CourseModule(dep, m002);
                 CourseModule cm3 = new CourseModule(dep, m004);
@@ -51,8 +46,7 @@ public class SmDemo2 {
                 CourseModule cm9 = new CourseModule(gdse, m004);
 
 
-
-                List.of(dep12,cmjd300,cmjd301,gdse81,cm1,cm2,cm3,cm4,cm5,cm6,cm7,cm8,cm9).forEach(em::persist);
+                List.of(dep12,cmjd103,cmjd102,gdse65,cm1,cm2,cm3,cm4,cm5,cm6,cm7,cm8,cm9).forEach(em::persist);
 
 
                 em.getTransaction().commit();
