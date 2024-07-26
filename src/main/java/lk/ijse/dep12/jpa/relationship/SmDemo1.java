@@ -26,34 +26,34 @@ public class SmDemo1 {
 
 
 
-                Student tharindu = new Student("123456789V", "Tharindu ", "Galle");
                 Student buddika = new Student("987654321V", "Buddhika", "Bandarawela");
                 Student ishara = new Student("456789346V", "ishara", "Gampaha");
+                Student tharindu = new Student("123456789V", "Tharindu ", "Galle");
+                Student nimal = new Student("937863796V", "Kasun", "Panadura");
                 Student imantha = new Student("678954321V", "Imantha", "Pugoda");
-                Student kasun = new Student("937863796V", "Kasun", "Panadura");
 
-                Contact imantha1 = new Contact(imantha, "071-1234567");
-                Contact imantha2 = new Contact(imantha, "072-1234567");
-                Contact ishara1 = new Contact(ishara, "077-1234567");
-                Contact tharindu1 = new Contact(tharindu, "088-1234567");
-                Contact kasun1 = new Contact(kasun, "075-1234567");
-                Contact kasun2 = new Contact(kasun, "076-1234567");
-                Contact kasun3 = new Contact(kasun, "033-1234567");
-                Contact buddhika1 = new Contact(buddika, "011-1234567");
-
-
-                imantha.getContactList().add(imantha1);
-                imantha.getContactList().add(imantha2);
-                ishara.getContactList().add(ishara1);
-                tharindu.getContactList().add(tharindu1);
-                kasun.getContactList().add(kasun1);
-                kasun.getContactList().add(kasun2);
-                kasun.getContactList().add(kasun3);
-                buddika.getContactList().add(buddhika1);
+                Contact c001 = new Contact(imantha, "071-1234567");
+                Contact c002 = new Contact(imantha, "072-1234567");
+                Contact c003 = new Contact(ishara, "077-1234567");
+                Contact c004 = new Contact(tharindu, "088-1234567");
+                Contact c005 = new Contact(nimal, "075-1234567");
+                Contact c006 = new Contact(nimal, "076-1234567");
+                Contact c007 = new Contact(nimal, "033-1234567");
+                Contact c008 = new Contact(buddika, "011-1234567");
 
 
-                User yasiya = new User("yasit", "Yasith Perera", "yasi123");
-                User asiri = new User("asiri", "Asiri Sampath", "asiri123");
+                imantha.getContactList().add(c001);
+                imantha.getContactList().add(c002);
+                ishara.getContactList().add(c003);
+                tharindu.getContactList().add(c004);
+                nimal.getContactList().add(c005);
+                nimal.getContactList().add(c006);
+                nimal.getContactList().add(c007);
+                buddika.getContactList().add(c008);
+
+
+                User kamal = new User("kamal", "Nimal ", "kamal1234");
+                User ramesh = new User("ramesh", "Ramesh", "ramesh2345");
 
 
                 Course dep = new Course("C001", "DEP");
@@ -61,9 +61,9 @@ public class SmDemo1 {
                 Course gdse = new Course("C003", "GDSE");
 
 
-                List.of(m001,m002,m003,m004,tharindu,buddika,imantha,ishara,kasun,
-                        imantha1,imantha2,ishara1,tharindu1,kasun1,kasun2,kasun3,buddhika1,
-                        yasiya,asiri,dep,cmjd,gdse).forEach(em::persist);
+                List.of(m001,m002,m003,m004,tharindu,buddika,imantha,ishara,nimal,
+                        c001,c003,c002,c004,c005,c006,c007,c008,
+                        kamal,ramesh,dep,cmjd,gdse).forEach(em::persist);
 
                 em.getTransaction().commit();
             }catch (Throwable t){
